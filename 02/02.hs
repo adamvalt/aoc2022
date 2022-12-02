@@ -2,8 +2,8 @@ import Data.Char
 
 main = do
     f <- readFile "02.txt"
-    print $ sum $ map calculateResult $ map convertToInt $ map toTuple $ map words $ lines f
-    print $ sum $ map calculateResult $ map guessResult $ map convertToInt $ map toTuple $ map words $ lines f
+    print $ sum $ map (calculateResult.convertToInt.toTuple.words) $ lines f
+    print $ sum $ map (calculateResult.guessResult.convertToInt.toTuple.words) $ lines f
 
 convertToInt :: (String, String) -> (Int, Int)
 convertToInt (x, y) =  (ord (head x) - 64, ord (head y) - 87) 
