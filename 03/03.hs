@@ -18,7 +18,6 @@ findCommon (a, b) = commonHelper a b
 convertValues :: Int -> Int
 convertValues v | v <= 90 = v - 38
                 | v >= 97 = v - 96
-                | otherwise = 100000000000000000
 
 group3Lines :: [String] -> [(String, String, String)]
 group3Lines [] = []
